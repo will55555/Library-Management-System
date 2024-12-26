@@ -13,7 +13,7 @@ public class DatabaseConnection implements AutoCloseable {
         //Check if connection is valid
         try {
             con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/nurses_db", "root",
+                    "jdbc:mysql://localhost:3306/library_management", "root",
                     "5945");
             System.out.println("Connection established.");
         }

@@ -1,6 +1,19 @@
 package org.WTT.repository;
 
-public class BorrowingRepository {
+import org.WTT.configuration.DatabaseConnection;
+
+import java.sql.Connection;
+
+public class BorrowingOpsRepository {
+    //private  static Connection connection;
+    public BorrowingOpsRepository() {
+        Connection connection = DatabaseConnection.getConnection();
+    }
+
+    public void borrow(){
+
+
+    }
      /*
     Members can borrow up to 3 books simultaneously
     The standard borrowing period is 14 days

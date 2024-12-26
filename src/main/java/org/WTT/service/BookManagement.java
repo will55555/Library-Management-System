@@ -1,9 +1,7 @@
-package org.WTT.entity;
-
-import java.security.PrivateKey;
+package org.WTT.service;
 
 public class BookManagement {
-    private int isbn;
+    private long isbn;
     private String author;
     private String title;
     private int quantity;
@@ -11,18 +9,18 @@ public class BookManagement {
     public BookManagement() {
     }
 
-    public BookManagement(int isbn, String author, String title, int quantity) {
+    public BookManagement(long isbn, String author, String title, int quantity) {
         this.isbn = isbn;
         this.author = author;
         this.title = title;
         this.quantity = quantity;
     }
 
-    public int getIsbn() {
+    public long getIsbn() {
         return isbn;
     }
 
-    public void setIsbn(int isbn) {
+    public void setIsbn(long isbn) {
         this.isbn = isbn;
     }
 
