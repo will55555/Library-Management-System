@@ -36,14 +36,14 @@ public class BookRepository {
         return false;
     }
 
-    public void UpdateExistingBookInfo(BookManagement book){
+    public void updateExistingBookInfo(BookManagement book){
         try {
             String sql = "UPDATE books SET author = ?, title = ?, quantity = ? WHERE ISBN = ?";
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setString(1, book.getAuthor());
             statement.setString(2, book.getTitle());
             statement.setInt(3, book.getQuantity());
-            statement.setLong(8, book.getIsbn());
+            statement.setLong(4, book.getIsbn());
 
 
             // Execute the update
@@ -63,7 +63,7 @@ public class BookRepository {
         }
 
     }
-    public void RemoveBooks(int isbn) //removes books from the system
+    public void removeBooks(int isbn) //removes books from the system
     {
         try {
             String sql = "DELETE FROM books WHERE ISBN = ?";
@@ -105,7 +105,8 @@ public class BookRepository {
             System.out.println(e.getMessage());
         }
         return book;
-    }//Search books by various criteria (ISBN, title, author)
+    }
+    //Search books by various criteria (ISBN, title, author)
     public List<BookManagement> displayAllBooks()
     {  List<BookManagement> books = new LinkedList<>();
 
