@@ -44,13 +44,14 @@ public class MembersRepository {
     //Update member information
     public void  memberInfoUpdate(MembersManagement member){
         try {
-            String sql = "UPDATE members SET first_name, last_name, email, member_status, members_borrowed? WHERE member_id = ?";
+            String sql = "UPDATE members SET first_name=?, last_name=?, email=?, member_status=?, books_borrowed=? WHERE member_id = ?";
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setString(1, member.getfName());
             statement.setString(2, member.getlName());
             statement.setString(3, member.getEmail());
             statement.setString(4, member.isStatus());
             statement.setInt(5, member.getBooksBorrowed());
+            statement.setInt(6, member.getMemberId());
             
             // Execute the update
             int rowsUpdated = statement.executeUpdate();

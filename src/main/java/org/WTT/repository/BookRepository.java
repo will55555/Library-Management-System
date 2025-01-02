@@ -80,7 +80,7 @@ public class BookRepository {
             System.out.println("Error deleting book: " + e.getMessage());
         }
     }
-    public BookManagement searchBooksById(int isbn){
+    public BookManagement searchBooksById(long isbn){
 
         BookManagement book = null;
         String sql = "SELECT * FROM books WHERE ISBN = ?";
